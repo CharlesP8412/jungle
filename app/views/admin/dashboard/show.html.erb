@@ -1,5 +1,5 @@
 <h1>Admin Dashboard</h1>
-<p><%= link_to 'Product Catagories:', admin_products_path %> <%= @dashboard_data[:catagories] %></p>
+<p><%= link_to 'Product Catagories:', admin_categories_path %> <%= @dashboard_data[:catagories] %></p>
 <p><%= link_to 'Number of Products:', admin_products_path %> <%= @dashboard_data[:products] %></p>
 <p>Orders Placed: <%= @dashboard_data[:orders] %></p>
 <p>Average Order: <%= humanized_money_with_symbol @dashboard_data[:avg_sale]/100 %></p>
