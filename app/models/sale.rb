@@ -1,10 +1,10 @@
 class Sale < ActiveRecord::Base
 
-  # def self.active
-  #   where("sales.starts_on <= ? AND sales.ends_on >= ?", Date.current, Date.current ).any?
-  # end
+  def self.active_sale
+    where("sales.starts_on <= ? AND sales.ends_on >= ?", Date.current, Date.current ).first
+  end
 
-  scope :active, -> { where("sales.starts_on <= ? AND sales.ends_on >= ?", Date.current, Date.current ).any?}
+  # scope :active, -> { where("sales.starts_on <= ? AND sales.ends_on >= ?", Date.current, Date.current ).any?}
 
   def self.current
     where("sales.starts_on <= ? AND sales.ends_on >= ?", Date.current, Date.current ).first?
