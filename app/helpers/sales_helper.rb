@@ -2,7 +2,11 @@ module SalesHelper
 
   def active_sale
     Sale.active_sale
-    # Sale.where("sales.starts_on <= ? AND sales.ends_on >= ?", Date.current, Date.current ).first
   end
   
+  def apply_savings(order_total)
+    puts Sale.active_sale.percent_off
+    order_total * Sale.active_sale.percent_off/100
+  end
+
 end
