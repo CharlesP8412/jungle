@@ -38,11 +38,27 @@ RSpec.describe User, type: :model do
       @user.save
       expect(@user.errors.full_messages).to be_present
     end
-    fit 'Password length must be >= 3 ' do
+    it 'Password length must be >= 3 ' do
       @user.password = '12'
       @user.password_confirmation = '12'
       @user.save
       expect(@user.errors.full_messages).to be_present
+    end
+  end
+  describe '.authenticate_with_credentials' do
+    before do
+      @user = User.new(first_name: 'John', last_name: 'Test', email: 'test@test.com', password: '1234', password_confirmation: '1234')
+    end
+    fit 'returns nil on failed authentication ' do
+      @user.save
+      @user = @user.authenticate('wrong_password')
+      byebug
+      expect(@user).not_to be_present
+    end
+    fit 'returns user on passed authentication ' do
+      @user.save
+      @user = @user.authenticate('1234')
+      expect(@user).to be_present
     end
   end
 end
