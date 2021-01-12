@@ -49,13 +49,24 @@ RSpec.describe User, type: :model do
     before do
       @user = User.new(first_name: 'John', last_name: 'Test', email: 'test@test.com', password: '1234', password_confirmation: '1234')
     end
-    fit 'returns nil on failed authentication ' do
+    it 'returns nil on failed authentication ' do
       @user.save
       @user = @user.authenticate('wrong_password')
-      byebug
       expect(@user).not_to be_present
     end
-    fit 'returns user on passed authentication ' do
+    it 'returns user on passed authentication ' do
+      @user.save
+      @user = @user.authenticate('1234')
+      expect(@user).to be_present
+    end
+    it 'ignores white spaces in email' do
+      @user.email = '   test@test.com   '
+      @user.save
+      @user = @user.authenticate('1234')
+      expect(@user).to be_present
+    end
+    it 'should ignore case in emails' do
+      @user.email = 'TeTt@TEsT.coM'
       @user.save
       @user = @user.authenticate('1234')
       expect(@user).to be_present
