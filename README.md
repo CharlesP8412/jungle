@@ -1,9 +1,13 @@
 # Jungle
 
-A mini e-commerce application built with Rails 4.2 for the purposes of learning from an inherited code base.
+A mini e-commerce application built with Rails 4.2 for the purposes of learning from an inherited code base.  Uses MVC design from Rails, built using EDD followed by test specs.
 
 ## Screenshots
-
+!["Overview"](https://raw.githubusercontent.com/CharlesP8412/jungle/master/docs/home_page.png)
+!["Home Page"](https://raw.githubusercontent.com/CharlesP8412/jungle/master/docs/home_page.png)
+!["Cart"](https://raw.githubusercontent.com/CharlesP8412/jungle/master/docs/cart_page.png)
+!["Admin Products"](https://raw.githubusercontent.com/CharlesP8412/jungle/master/docs/admin_products.png)
+!["Promotions"](https://raw.githubusercontent.com/CharlesP8412/jungle/master/docs/promotions_page.png)
 
 
 
