@@ -1,7 +1,6 @@
 require 'rails_helper'
 
-# test that users can navigate from the home page to the product detail page by clicking on a product.
-RSpec.feature 'Visitor navigates to product detials page', type: :feature, js: true do
+RSpec.feature 'Visitor adds items to cart then visits the cart', type: :feature, js: true do
   # SETUP
   before :each do
     @category = Category.create! name: 'Apparel'
@@ -17,10 +16,10 @@ RSpec.feature 'Visitor navigates to product detials page', type: :feature, js: t
     end
   end
 
-  scenario 'They see product details' do
+  scenario 'They see Pay with Card @ the cart' do
     visit root_path
-    first('article').click_link 'Details'
-    expect(page).to have_content 'Description'
-    # save_screenshot 'product_page.png'
+    first('article').click_on 'Add'
+    expect(page).to have_content 'My Cart (1)'
+    # save_screenshot 'nav_cart.png'
   end
 end
