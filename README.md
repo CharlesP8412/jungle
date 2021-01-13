@@ -3,9 +3,8 @@
 A mini e-commerce application built with Rails 4.2 for the purposes of learning from an inherited code base.  Uses MVC design from Rails, built using EDD followed by test specs.
 
 ## Screenshots
-!["Overview"](https://raw.githubusercontent.com/CharlesP8412/jungle/master/docs/home_page.png)
+!["Overview"](https://raw.githubusercontent.com/CharlesP8412/jungle/master/docs/overview.gif)
 !["Home Page"](https://raw.githubusercontent.com/CharlesP8412/jungle/master/docs/home_page.png)
-!["Cart"](https://raw.githubusercontent.com/CharlesP8412/jungle/master/docs/cart_page.png)
 !["Admin Products"](https://raw.githubusercontent.com/CharlesP8412/jungle/master/docs/admin_products.png)
 !["Promotions"](https://raw.githubusercontent.com/CharlesP8412/jungle/master/docs/promotions_page.png)
 
@@ -36,22 +35,22 @@ If running in a VM such as Vagrant use `bin/rails s -b 0.0.0.0`
 
 
 ## Rspec & Capybara Testing
-To run all test use: `rspec --format documentation`
+To run all test use: 
+```
+rspec --format documentation
+```
 
-RSpec Test:
-* Product Validations
-* User Validations
-* User Authentication
+RSpec Specs: | Capybara Specs:
+-----------------------------------
+Product Validations   |  Home page renders
+User Validations      |  Product Details Renders
+User Authentication   |  Item are added to the cart
 
-Capybara Specs:
-* Home page renders
-* Product Details Renders
-* Item are added to the cart
-
-## Stripe Testing
-
+### Stripe Testing
+```
 Use Credit Card # 4111 1111 1111 1111 for testing success scenarios.
 
+```
 More information in their docs: <https://stripe.com/docs/testing#cards>
 
 ## Features
