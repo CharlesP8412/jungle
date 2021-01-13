@@ -1,6 +1,12 @@
 # Jungle
 
-A mini e-commerce application built with Rails 4.2 for the purposes of learning from an inherited code base.  Uses MVC design from Rails, built using EDD followed by test specs.
+A mini e-commerce application built with Rails 4.2 for the purposes of learning from inheriting a legacy code base.  Uses MVC design from Rails, built using EDD followed by test specs for new features.
+
+## Features
+- Promotions can be scheduled and will automatically appear in a banner when they are active.
+- Items will display 'Sold Out' when their quantity reaches zero. Occurs in all pages including admin.
+- Admin Dashboard to show key stats of the store.
+
 
 ## Screenshots
 !["Overview"](https://raw.githubusercontent.com/CharlesP8412/jungle/master/docs/overview.gif)
@@ -53,12 +59,6 @@ Use Credit Card # 4111 1111 1111 1111 for testing success scenarios.
 ```
 More information in their docs: <https://stripe.com/docs/testing#cards>
 
-## Features
-- SPA Design with state of data.
-  - Spots available will update as appointments are created or deleted
-  - Error Handling on Save and Delete:
-    - Will return to the appointment form when the message is closed
-
 ## Known Issues
 - My Cart in nav bar only counts line items, not total items
 
@@ -66,3 +66,4 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 - Email receipt to user on checkout
 - Product Ratings
 - Inventory Adjustment
+- Sold out products summary in dashboard
