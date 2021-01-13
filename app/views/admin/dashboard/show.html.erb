@@ -1,14 +1,21 @@
 <h1>Admin Dashboard</h1>
-<p><%= link_to 'Product Catagories:', admin_categories_path %> <%= @dashboard_data[:catagories] %></p>
-<p><%= link_to 'Number of Products:', admin_products_path %> <%= @dashboard_data[:products] %></p>
-
-<p>Orders Placed: <%= @dashboard_data[:orders] %></p>
-<p>Total Store Sales: <%= humanized_money_with_symbol @dashboard_data[:total_sales]/100 %></p>
-<% if !@dashboard_data[:avg_sale] %>
-  <p>Average Order: $0 </p>
+<div> 
+  <h3>Products</h3>
+  <p><%= link_to 'Product Catagories:', admin_categories_path %> <%= @dashboard_data[:catagories] %></p>
+  <p><%= link_to 'Number of Products:', admin_products_path %> <%= @dashboard_data[:products] %></p>
+</div>
+<div>
+  <h3>Sales</h3>
+  <p>Orders Placed: <%= @dashboard_data[:orders] %></p>
+  <p>Total Store Sales: <%= humanized_money_with_symbol @dashboard_data[:total_sales]/100 %></p>
+  <% if !@dashboard_data[:avg_sale] %>
+    <p>Average Order: $0 </p>
   <% else %>
-  <p>Average Order: <%= humanized_money_with_symbol @dashboard_data[:avg_sale]/100 %></p>
-<% end %>
-
-<p><%= link_to 'Active Sales:', admin_sales_path %> <%= @dashboard_data[:active_sales] %></p>
-<p><%= link_to 'Upcoming Sales:', admin_sales_path %> <%= @dashboard_data[:upcoming_sales] %></p>
+    <p>Average Order: <%= humanized_money_with_symbol @dashboard_data[:avg_sale]/100 %></p>
+  <% end %>
+</div>
+<div> 
+  <h3>Promotions</h3>
+  <p><%= link_to 'Active Promotions:', admin_sales_path %> <%= @dashboard_data[:active_sales] %></p>
+  <p><%= link_to 'Upcoming Promotions:', admin_sales_path %> <%= @dashboard_data[:upcoming_sales] %></p>
+</div>
